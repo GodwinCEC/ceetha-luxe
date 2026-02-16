@@ -56,8 +56,8 @@ class State {
     saveToStorage() {
         try {
             const dataToSave = {
-                cart: this.state.cart
-                // We don't save user/products to storage usually for security/freshness
+                cart: this.state.cart,
+                theme: this.state.theme
             };
             localStorage.setItem(STATE_KEY, JSON.stringify(dataToSave));
         } catch (error) {

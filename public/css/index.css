@@ -8,16 +8,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('../assets/images/hero-bg.jpg');
+    /* Opacity control: adjust the '0.8' and '0.5' below (0 is transparent, 1 is solid) */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('../assets/images/hero-bg.png');
     background-size: cover;
     background-position: center;
-    color: white;
+    background-repeat: no-repeat;
+    color: #fff; /* Always white text for contrast on the dark overlay */
     position: relative;
     overflow: hidden;
-}
-
-[data-theme="light"] .hero {
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.4)), url('../assets/images/hero-bg.jpg');
 }
 
 .hero-content {
@@ -35,6 +33,10 @@
     animation: slideUpFade 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+[data-theme="light"] .hero h1 {
+    /* Removed custom light mode shadow to keep consistent dark-hero look */
+}
+
 .hero p {
     font-size: 1.1rem;
     margin-bottom: var(--space-lg);
@@ -50,10 +52,40 @@
 }
 
 .category-showcase {
-    padding: var(--space-xl) 0;
+    padding: var(--space-xl) var(--space-md);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.hero-content .cta-group {
+    display: flex;
     gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-position: 70% center; /* Adjust to show the seated area/vibe on mobile */
+    }
+
+    .hero-content .cta-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: var(--space-lg) auto 0;
+        gap: var(--space-sm);
+    }
+    
+    .hero-content .luxury-button {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .category-showcase {
+        padding: var(--space-xl) var(--space-lg);
+    }
 }
 
 .category-card {

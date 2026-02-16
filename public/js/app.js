@@ -47,16 +47,37 @@ const setupMobileMenu = () => {
     const menu = document.getElementById('nav-menu');
     if (!btn || !menu) return;
 
-    btn.onclick = () => {
-        menu.classList.toggle('nav-active');
-        btn.classList.toggle('active'); // Future: For cross-icon animation
+    // Create overlay element if it doesn't exist
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    const closeMenu = () => {
+        menu.classList.remove('nav-active');
+        btn.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
     };
+
+    btn.onclick = () => {
+        const isActive = menu.classList.toggle('nav-active');
+        btn.classList.toggle('active');
+        overlay.classList.toggle('active');
+
+        // Prevent scroll when menu is open
+        document.body.style.overflow = isActive ? 'hidden' : '';
+    };
+
+    overlay.onclick = closeMenu;
 
     // Close menu when clicking links
     menu.querySelectorAll('a').forEach(link => {
-        link.onclick = (e) => {
+        link.onclick = () => {
             if (link.id !== 'auth-link') {
-                menu.classList.remove('nav-active');
+                closeMenu();
             }
         };
     });
@@ -94,10 +115,11 @@ const handleStickyHeader = () => {
 
 const updateCartBadge = (cart) => {
     const badge = document.getElementById('cart-count');
-    if (badge) {
-        const count = cart.reduce((total, item) => total + item.quantity, 0);
-        badge.textContent = count;
-    }
+    const badgeMobile = document.getElementById('cart-count-mobile');
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+
+    if (badge) badge.textContent = count;
+    if (badgeMobile) badgeMobile.textContent = count;
 };
 
 const updateAuthUI = (user) => {

@@ -28,7 +28,7 @@
         <nav class="nav-links" id="nav-menu">
           <a href="index.html">Home</a>
           <a href="shop.html">Shop</a>
-          <a href="cart.html">Cart</a>
+          <a href="cart.html">Cart (<span id="cart-count-mobile">0</span>)</a>
           <a href="#" id="auth-link">Login</a>
         </nav>
         <div class="user-actions">
@@ -55,14 +55,7 @@
             >
           </h1>
           <p>Curated Equipment & Global Beauty Collections</p>
-          <div
-            style="
-              display: flex;
-              gap: var(--space-md);
-              justify-content: center;
-              margin-top: var(--space-lg);
-            "
-          >
+          <div class="cta-group">
             <a href="shop.html" class="luxury-button">Explore Collection</a>
             <a href="#categories" class="luxury-button outline"
               >Our Expertise</a

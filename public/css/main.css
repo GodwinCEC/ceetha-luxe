@@ -34,16 +34,16 @@
 
 /* Light Theme Override */
 [data-theme="light"] {
-    --color-bg: #fafafa;
+    --color-bg: #f9f7f2; /* Off-white, slightly cream/luxe */
     --color-surface: #ffffff;
-    --color-surface-soft: #f4f4f4;
-    --color-text: #111111;
-    --color-text-dim: rgba(0, 0, 0, 0.65);
-    --color-gray: #e0e0e0;
+    --color-surface-soft: #efebd8;
+    --color-text: #1a1a1a;
+    --color-text-dim: rgba(0, 0, 0, 0.6);
+    --color-gray: #e8e4d8;
     --color-border: rgba(181, 147, 74, 0.3);
-    --color-glass: rgba(255, 255, 255, 0.7);
-    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
-    --color-gold: #b5934a; /* Deeper gold for better contrast on light */
+    --color-glass: rgba(255, 255, 255, 0.85);
+    --shadow-soft: 0 15px 45px rgba(0, 0, 0, 0.05);
+    --color-gold: #a67c00; /* Deeper, more saturated gold for light mode */
 }
 
 /* Base Styles */
@@ -314,7 +314,28 @@ header .container {
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Mobile menu handled by JS class toggle */
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hide off-screen */
+        width: 70%;  /* Partial width drawer */
+        height: 100vh;
+        background: var(--color-surface);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        transition: var(--transition);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        border-right: 1px solid var(--color-border);
+    }
+
+    .nav-links.nav-active {
+        right: 0; /* Slide in */
+    }
+
+    .cart-btn {
+        display: none; /* Hide top cart icon on mobile as requested */
     }
     
     .mobile-toggle {
@@ -337,18 +358,27 @@ header .container {
     }
 }
 
-.nav-active {
+.nav-links.nav-active {
     display: flex !important;
+}
+
+.nav-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: var(--color-bg);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 998; /* Just below the nav menu */
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 @keyframes spin {
