@@ -1,0 +1,138 @@
+/* 
+  Cart Page Styles - Ceetha Luxe
+*/
+
+.cart-container {
+    max-width: 1000px;
+    margin: 120px auto var(--space-xl);
+    padding: 0 var(--space-md);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: var(--space-md);
+}
+
+.cart-header h1 {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto auto;
+    gap: var(--space-xl);
+    align-items: center;
+    background: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.cart-item:hover {
+    transform: scale(1.01);
+    border-color: var(--color-gold);
+}
+
+.cart-item-img {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.cart-qty-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+}
+
+.cart-qty-btn {
+    padding: 10px 15px;
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+.cart-qty-val {
+    padding: 0 15px;
+    font-weight: 700;
+}
+
+.remove-btn {
+    color: #ff4d4d;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+.remove-btn:hover {
+    opacity: 1;
+}
+
+.cart-summary {
+    margin-top: var(--space-xl);
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gold);
+    max-width: 450px;
+    margin-left: auto;
+    box-shadow: var(--shadow-soft);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+}
+
+.summary-total {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 100px 1fr;
+        gap: var(--space-md);
+    }
+    .cart-qty-controls, .remove-btn {
+        grid-column: span 2;
+    }
+}

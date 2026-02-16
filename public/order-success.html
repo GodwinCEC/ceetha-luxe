@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Success | Ceetha Luxe</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .success-container {
+        max-width: 600px;
+        margin: var(--space-xl) auto;
+        text-align: center;
+        background: var(--color-gray);
+        padding: var(--space-xl);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--color-gold);
+      }
+      .success-icon {
+        font-size: 4rem;
+        color: var(--color-gold);
+        margin-bottom: var(--space-md);
+      }
+      .order-id {
+        display: inline-block;
+        background: #000;
+        padding: var(--space-xs) var(--space-md);
+        border-radius: var(--radius-sm);
+        margin: var(--space-md) 0;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo font-elegant">CEETHA LUXE</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="success-container">
+        <div class="success-icon">✨</div>
+        <h1 class="font-elegant">Thank You for Your Order</h1>
+        <p>
+          Your selection is being prepared for the ultimate luxury experience.
+        </p>
+
+        <div id="order-info" style="margin-top: var(--space-lg)">
+          <p>Order Reference:</p>
+          <div class="order-id" id="display-order-id">FETCHING...</div>
+        </div>
+
+        <p style="opacity: 0.7; margin-top: var(--space-md)">
+          A confirmation email has been sent to your inbox. We will notify you
+          once your package is dispatched.
+        </p>
+
+        <div
+          style="
+            margin-top: var(--space-xl);
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+          "
+        >
+          <a href="shop.html" class="luxury-button outline">Back to Shop</a>
+          <a href="track.html" class="luxury-button">Track Order</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get("orderId") || "CE-999-UX";
+      document.getElementById("display-order-id").textContent = orderId;
+    </script>
+  </body>
+</html>

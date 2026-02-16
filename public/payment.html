@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Payment | Ceetha Luxe</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Paystack Inline JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+      .payment-container {
+        max-width: 600px;
+        margin: var(--space-xl) auto;
+        text-align: center;
+        background: var(--color-gray);
+        padding: var(--space-xl);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--color-gold);
+      }
+      .order-info-box {
+        background: #000;
+        padding: var(--space-md);
+        border-radius: var(--radius-sm);
+        margin: var(--space-lg) 0;
+        text-align: left;
+      }
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--space-xs);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo font-elegant">CEETHA LUXE</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="payment-container" id="payment-view">
+        <h1 class="font-elegant">Order Confirmation</h1>
+        <p>
+          Please double-check your order before proceeding to secure payment.
+        </p>
+
+        <div id="order-loading">Refining order details...</div>
+
+        <div id="order-details" style="display: none">
+          <div class="order-info-box">
+            <div class="info-row">
+              <span>Order ID:</span>
+              <span id="display-order-id" style="color: var(--color-gold)"
+                >...</span
+              >
+            </div>
+            <div class="info-row">
+              <span>Customer:</span>
+              <span id="display-customer">...</span>
+            </div>
+            <div
+              class="info-row"
+              style="
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin-top: 1rem;
+                border-top: 1px solid #333;
+                padding-top: 0.5rem;
+              "
+            >
+              <span>Total to Pay:</span>
+              <span id="display-total" style="color: var(--color-gold)"
+                >GH₵0.00</span
+              >
+            </div>
+          </div>
+
+          <button id="pay-now-btn" class="luxury-button" style="width: 100%">
+            Pay Securely with Paystack
+          </button>
+          <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6">
+            Payments are handled securely via Paystack. Your data is never
+            stored on our servers.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="js/pages/payment.js"></script>
+  </body>
+</html>

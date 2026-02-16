@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Collection | Ceetha Luxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <div class="container">
+        <a href="index.html" class="logo font-elegant">CEETHA LUXE</a>
+        <nav class="nav-links" id="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="cart.html">Cart</a>
+          <a href="#" id="auth-link">Login</a>
+        </nav>
+        <div class="user-actions">
+          <a href="cart.html" class="cart-btn">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-count">0</span>
+          </a>
+          <button class="mobile-toggle" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="shop-layout">
+        <aside class="filters-sidebar">
+          <div class="filter-group">
+            <h3>Categories</h3>
+            <ul id="category-list">
+              <li data-category="all" class="active">All Collections</li>
+              <li data-category="fashion">Fashion</li>
+              <li data-category="beauty">Beauty</li>
+              <li data-category="electronics">Electronics</li>
+              <li data-category="equipment">Equipment</li>
+            </ul>
+          </div>
+          <div class="filter-group">
+            <h3>Price Range</h3>
+            <ul id="price-filters">
+              <li data-min="0" data-max="high">All Prices</li>
+              <li data-min="0" data-max="500">Under GH₵500</li>
+              <li data-min="500" data-max="2000">GH₵500 - GH₵2000</li>
+              <li data-min="2000" data-max="high">Above GH₵2000</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="shop-main">
+          <input
+            type="text"
+            id="search-bar"
+            class="search-bar"
+            placeholder="Search for luxury items..."
+          />
+
+          <div id="product-grid" class="product-grid">
+            <!-- Products injected via shop.js -->
+            <p style="text-align: center; grid-column: 1/-1; opacity: 0.5">
+              Curating results...
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2 class="font-elegant">CEETHA LUXE</h2>
+            <p>
+              Curating the pinnacle of global luxury equipment and beauty
+              tailored for the sophisticated mind.
+            </p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="shop.html">Browse Collection</a></li>
+              <li><a href="cart.html">Your Selection</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>Accra, Ghana</p>
+            <p>support@ceethaluxe.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Ceetha Luxe. Developed by
+            <a href="https://godwinmawuli.com" target="_blank"
+              >Godwin Mawulikplim</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/shop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+/* 
+  Admin Dashboard Styles - Ceetha Luxe
+*/
+
+.admin-body {
+    background-color: #050505;
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    background: #0f0f0f;
+    border-right: 1px solid rgba(198, 167, 94, 0.1);
+    padding: var(--space-lg);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-nav {
+    list-style: none;
+    margin-top: var(--space-xl);
+    flex-grow: 1;
+}
+
+.admin-nav li {
+    margin-bottom: 8px;
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.admin-nav a:hover, .admin-nav a.active {
+    opacity: 1;
+    background: rgba(198, 167, 94, 0.08);
+    color: var(--color-gold);
+    box-shadow: inset 3px 0 0 var(--color-gold);
+}
+
+.admin-content {
+    padding: var(--space-xl);
+    background: linear-gradient(to bottom right, #050505, #111);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.stat-card {
+    background: #121212;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.stat-card h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.stat-card .value {
+    font-size: 2.25rem;
+    font-weight: 800;
+}
+
+/* Data Table refinement */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.data-table th {
+    padding: 15px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    text-align: left;
+}
+
+.data-table tr {
+    background: #121212;
+    transition: var(--transition);
+}
+
+.data-table tr:hover {
+    background: #1a1a1a;
+    transform: translateX(5px);
+}
+
+.data-table td {
+    padding: 18px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.data-table td:first-child { border-left: 1px solid rgba(255, 255, 255, 0.02); border-radius: 8px 0 0 8px; }
+.data-table td:last-child { border-right: 1px solid rgba(255, 255, 255, 0.02); border-radius: 0 8px 8px 0; }
+
+.order-status-select {
+    background: #000;
+    color: #fff;
+    border: 1px solid var(--color-border);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Modal Polish */
+.modal-content {
+    background: #111 !important;
+    border: 1px solid var(--color-gold) !important;
+    box-shadow: 0 0 50px rgba(0,0,0,1) !important;
+}
+
+.form-group label {
+    color: var(--color-gold);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}

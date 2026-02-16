@@ -1,0 +1,116 @@
+/* 
+  Checkout Page Styles - Ceetha Luxe
+*/
+
+.checkout-container {
+    margin-top: 120px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
+}
+
+.checkout-section {
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.checkout-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-lg);
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--color-gold);
+    outline: none;
+    box-shadow: 0 0 10px rgba(198, 167, 94, 0.1);
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.payment-option {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+    background: var(--color-bg);
+}
+
+.payment-option.active {
+    border-color: var(--color-gold);
+    background: rgba(198, 167, 94, 0.05);
+    box-shadow: 0 5px 15px rgba(198, 167, 94, 0.1);
+}
+
+.payment-option i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.order-summary-card {
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gold);
+    position: sticky;
+    top: 120px;
+    box-shadow: var(--shadow-soft);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+    opacity: 0.9; /* Improved visibility */
+}
+
+@media (max-width: 1024px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+    .order-summary-card {
+        position: static;
+    }
+}

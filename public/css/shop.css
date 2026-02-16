@@ -1,0 +1,155 @@
+/* 
+  Shop Page Styles - Ceetha Luxe
+*/
+
+.shop-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
+    margin-top: 80px;
+}
+
+/* Sidebar / Filters */
+.filters-sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    background: var(--color-surface);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.filter-group {
+    margin-bottom: var(--space-lg);
+}
+
+.filter-group h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+    color: var(--color-gold);
+}
+
+.filter-group ul {
+    list-style: none;
+}
+
+.filter-group li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    opacity: 0.8; /* Increased opacity for light mode */
+    transition: var(--transition);
+}
+
+.filter-group li:hover, .filter-group li.active {
+    opacity: 1;
+    color: var(--color-gold);
+    padding-left: 5px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.product-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--color-gold);
+}
+
+.product-image {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.product-info .price {
+    color: var(--color-gold);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 20px 30px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    margin-bottom: var(--space-xl);
+    font-size: 1rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--space-xl) 0;
+    opacity: 0.5;
+}
+
+.empty-state symbol {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--space-md);
+    color: var(--color-gold);
+}
+
+@media (max-width: 900px) {
+    .shop-layout {
+        grid-template-columns: 1fr;
+    }
+    .filters-sidebar {
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        gap: var(--space-md);
+        padding: var(--space-sm);
+    }
+    .filter-group {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+}
