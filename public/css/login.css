@@ -3,11 +3,12 @@
 */
 
 .login-page {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--color-bg), #000);
+    padding: var(--space-md);
 }
 
 .login-card {
@@ -76,3 +77,20 @@
     text-align: center;
     display: none;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 500px) {
+    .login-card {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    .login-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-card p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+}
+

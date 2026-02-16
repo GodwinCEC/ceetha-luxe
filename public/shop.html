@@ -62,12 +62,29 @@
         </aside>
 
         <section class="shop-main">
-          <input
-            type="text"
-            id="search-bar"
-            class="search-bar"
-            placeholder="Search for luxury items..."
-          />
+          <div
+            class="shop-controls"
+            style="
+              display: flex;
+              gap: var(--space-sm);
+              margin-bottom: var(--space-lg);
+            "
+          >
+            <input
+              type="text"
+              id="search-bar"
+              class="search-bar"
+              placeholder="Search for luxury items..."
+              style="margin-bottom: 0; flex-grow: 1"
+            />
+            <button
+              id="filter-toggle"
+              class="luxury-button outline"
+              style="padding: 0 20px; white-space: nowrap; height: 58px"
+            >
+              Filters
+            </button>
+          </div>
 
           <div id="product-grid" class="product-grid">
             <!-- Products injected via shop.js -->

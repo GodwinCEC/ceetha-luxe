@@ -1,7 +1,6 @@
 /**
  * UI Components and helper functions
  */
-
 export const showToast = (message, type = 'info') => {
     // Check if container exists
     let container = document.getElementById('toast-container');
@@ -84,17 +83,19 @@ export const showLoader = (show = true) => {
 
 export const renderProductCard = (product) => {
     return `
-        <div class="product-card" data-id="${product.id}">
+        <div class="product-card" data-product-id="${product.id}">
             <div class="product-image">
                 <img src="${product.images[0]}" alt="${product.name}" loading="lazy">
-                <div class="product-badge">NEW</div>
+                ${product.isNew ? '<div class="product-badge">NEW</div>' : ''}
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
-                <p class="price">GH₵${product.price}</p>
-                <div style="margin-top: 15px;">
-                    <button class="luxury-button outline add-to-cart" data-id="${product.id}" style="width: 100%;">Add to Cart</button>
-                </div>
+                <p class="price">GH₵${product.price.toLocaleString()}</p>
+            </div>
+            <div class="product-actions">
+                <button class="luxury-button outline add-to-cart" data-id="${product.id}">
+                    Add to Cart
+                </button>
             </div>
         </div>
     `;

@@ -154,10 +154,130 @@ export const seedTestData = async () => {
             stock: 3,
             description: "Professional grade equipment for high-end bakeries.",
             images: ["https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Onyx Eclipse Watch",
+            category: "fashion",
+            price: 15600.00,
+            stock: 2,
+            description: "A timeless masterpiece with obsidian highlights.",
+            images: ["https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Velvet Midnight Sofa",
+            category: "equipment",
+            price: 8900.00,
+            stock: 4,
+            description: "Plush velvet comfort for the modern living space.",
+            images: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Pure Essence Parfum",
+            category: "beauty",
+            price: 1200.00,
+            stock: 15,
+            description: "A scent that lingers in the memory of those you meet.",
+            images: ["https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Quantum Soundbar Pro",
+            category: "electronics",
+            price: 2400.00,
+            stock: 10,
+            description: "Immersive audio experience for your luxury cinematic nights.",
+            images: ["https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Artisan Leather Tote",
+            category: "fashion",
+            price: 3100.00,
+            stock: 6,
+            description: "Hand-crafted from the finest Italian leather.",
+            images: ["https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Diamond Infused Cream",
+            category: "beauty",
+            price: 1850.00,
+            stock: 20,
+            description: "The ultimate skin rejuvenation treatment.",
+            images: ["https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Crystal Decanter Set",
+            category: "equipment",
+            price: 1500.00,
+            stock: 10,
+            description: "Serve your finest spirits in style.",
+            images: ["https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Nebula VR Headset",
+            category: "electronics",
+            price: 4200.00,
+            stock: 5,
+            description: "Venture into worlds beyond your imagination.",
+            images: ["https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Cashmere Lounge Set",
+            category: "fashion",
+            price: 2200.00,
+            stock: 12,
+            description: "Unrivaled softness for your quiet moments.",
+            images: ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Golden Hour Highlight",
+            category: "beauty",
+            price: 550.00,
+            stock: 30,
+            description: "Capture the perfect glow at any time of day.",
+            images: ["https://images.unsplash.com/photo-1522338228045-9b6c2159879f?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Imperial Espresso Machine",
+            category: "equipment",
+            price: 7800.00,
+            stock: 3,
+            description: "The peak of morning perfection.",
+            images: ["https://images.unsplash.com/photo-1510972527921-ce03766a1cf1?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Titanium Laptop Studio",
+            category: "electronics",
+            price: 15000.00,
+            stock: 5,
+            description: "Unprecedented power in a sleek, metal chassis.",
+            images: ["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Midnight Suede Boots",
+            category: "fashion",
+            price: 4200.00,
+            stock: 8,
+            description: "Elegance with every step you take.",
+            images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Platinum Face Roller",
+            category: "beauty",
+            price: 900.00,
+            stock: 15,
+            description: "Enhance your daily ritual with cooling platinum.",
+            images: ["https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80"]
+        },
+        {
+            name: "Vintage Film Camera",
+            category: "electronics",
+            price: 5500.00,
+            stock: 2,
+            description: "Capture the world through a classic lens.",
+            images: ["https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"]
         }
     ];
 
-    console.log("Seeding started...");
+    console.log("Seeding luxury vault...");
     for (const p of products) {
         await saveProduct(p);
     }

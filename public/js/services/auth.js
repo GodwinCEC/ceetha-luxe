@@ -3,12 +3,40 @@
  */
 import {
     signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     signOut,
     onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { doc, getDoc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { auth, db } from "./firebase.js";
 import state from "../state.js";
+
+/**
+ * Register a new user
+ */
+export const register = async (email, password, userData) => {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        const newUserDoc = {
+            uid: user.uid,
+            email: user.email,
+            role: 'customer',
+            createdAt: serverTimestamp(),
+            ...userData
+        };
+
+        // Save to Firestore
+        await setDoc(doc(db, "users", user.uid), newUserDoc);
+
+        state.setUser(newUserDoc);
+        return newUserDoc;
+    } catch (error) {
+        console.error("Registration failed:", error);
+        throw error;
+    }
+};
 
 /**
  * Login user with email and password
