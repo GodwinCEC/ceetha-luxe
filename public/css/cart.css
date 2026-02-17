@@ -129,7 +129,7 @@
 
 @media (max-width: 768px) {
     .cart-header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .cart-item {
@@ -155,7 +155,7 @@
     .cart-qty-controls {
         grid-area: qty;
         justify-content: space-between;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .remove-btn {
@@ -167,7 +167,19 @@
 
     .cart-summary {
         margin-left: 0;
-        max-width: 100%;
-        padding: var(--space-lg);
+        width: 100%;
+        padding: var(--space-md); /* Reduced padding to prevent squeeze */
+    }
+
+    .summary-total {
+        font-size: 1.35rem; /* Smaller font to fit screen */
+        flex-direction: column; /* Stack total label and price on very small screens */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .summary-row {
+        flex-wrap: wrap; /* Allow wrapping */
+        gap: 10px;
     }
 }

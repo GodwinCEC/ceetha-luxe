@@ -111,30 +111,17 @@
   }
 }
 
-/* Desktop: 4 columns */
-@media (min-width: 1025px) and (max-width: 1399px) {
+/* Desktop: 3 columns (all sizes) */
+@media (min-width: 1025px) {
   .product-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
-  }
-  
-  .product-image {
-    height: 320px;
-    aspect-ratio: 3/4;
-  }
-}
-
-/* Extra wide: 5 columns */
-@media (min-width: 1400px) {
-  .product-grid {
-    grid-template-columns: repeat(5, 1fr);
-    max-width: 1800px;
+    max-width: 1400px;
     margin: 0 auto;
-    gap: var(--space-xl);
   }
   
   .product-image {
-    height: 340px;
+    height: 380px;
     aspect-ratio: 3/4;
   }
 }

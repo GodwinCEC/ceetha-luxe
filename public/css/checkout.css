@@ -112,5 +112,40 @@
     }
     .order-summary-card {
         position: static;
+        margin-top: var(--space-lg);
+    }
+}
+
+/* Responsive form rows */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        margin-top: 100px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .checkout-section {
+        padding: var(--space-md);
+    }
+    
+    .order-summary-card {
+        padding: var(--space-md);
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-section h2 {
+        font-size: 1.5rem;
     }
 }

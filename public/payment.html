@@ -30,6 +30,18 @@
         margin-bottom: var(--space-xs);
         font-size: 0.9rem;
       }
+
+      @media (max-width: 768px) {
+        .payment-container {
+          margin-top: 100px;
+          padding: var(--space-md);
+          width: 90%;
+        }
+
+        .info-row {
+          font-size: 0.85rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -41,6 +53,13 @@
           <a href="shop.html">Shop</a>
           <a href="cart.html">Cart (<span id="cart-count-mobile">0</span>)</a>
         </nav>
+        <div class="user-actions">
+          <button class="mobile-toggle" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -93,6 +112,7 @@
       </div>
     </main>
 
+    <script type="module" src="js/app.js"></script>
     <script type="module" src="js/pages/payment.js"></script>
   </body>
 </html>
